@@ -30,12 +30,48 @@
         box-shadow: 0 10px 35px rgba(0,0,0,0.5);
     }
 
+    #form-box2{
+        background: rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(15px);
+        padding: 35px;
+        border-radius: 20px;
+        width: 250px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        overflow: hidden;
+        flex-direction: column;
+    }
+
     h1 {
         text-align: center;
         font-size: 25px;
         font-weight: bold;
         color: black;
         margin-bottom: 20px;
+    }
+
+    h6 {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    .image {
+        height: 90px;
+    }
+
+    .image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .information {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .btn-primary {
@@ -67,63 +103,23 @@
 
 <body>
 
-    <div id="form-box">
+    <hl>Student Notebooks</hl>
 
-    <br>
+    <h6>Pick a subject</h6>
 
+<div id="form-box2">
 
-    <form>
-         <h1>Login to your school account:</h1>
-
-    <br>
-
-        <label for="username">Username</label>
-            <br>
-            <input type="text" id="Username" class="form-control" placeholder="Enter here" required>
-            <br>
-
-        <label for="password">Password</label>
-            <br>
-            <input type="text" id="password" class="form-control" placeholder="Enter here" required>
-            <br> 
-
-        <div class="text-center">
-        <input type="button" name="button" id="login" value="Login" class="btn btn-info rounded-5 px-5 btn-lg" onclick="authenticate()">
-        </div>
-
-    </form>
+    <div class="image">
+        <img src="" alt="Header image">
     </div>
-    
-    <p id="display"></p>
 
-    <script>
-        let attempt_counter = 0;
+    <div class="information">
+        <h5>Math</h5>
+        <br>
+        <h5>Sir Verba</h5>
+    </div>
 
-        function authenticate(){
-            let username = document.getElementById("Username").value;
-            let pwd = document.getElementById("password").value;
-            let granted = "Welcome " + username + "!";
-            let denied = "Access denied. Account locked after 3 attempts!";
-        
-        if (username === "Student L" && pwd === "6751322") {
-            alert(granted);
-            attempt_counter = 0; // reset attempts after successful login
-            window.location.href = "";
-        }
-
-        else {
-            attempt_counter++;
-            document.getElementById("display").innerHTML =
-                "Incorrect username and/or password. Attempt " + attempt_counter + " of 3 ";
-        }
-          }
-
-        if (attempt_counter >= 3) {
-                alert(denied);
-                document.getElementById("login").disabled = true; // disable button
-           
-           }
-    </script>
+</div>
     
 </body>
 </html>
