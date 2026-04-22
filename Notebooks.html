@@ -13,6 +13,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 30px;
         margin: 0;
         flex-direction: column;
         background-image: url("https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/3db1265c-67f7-49de-8d19-5845a499a064/Website+Detail+V2-01.png");
@@ -33,9 +34,11 @@
     #form-box2{
         background: rgba(255, 255, 255, 0.20);
         backdrop-filter: blur(15px);
-        padding: 35px;
         border-radius: 20px;
-        width: 250px;
+        width: 240px;
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         overflow: hidden;
         flex-direction: column;
@@ -46,7 +49,10 @@
         font-size: 25px;
         font-weight: bold;
         color: black;
-        margin-bottom: 20px;
+        margin: 0;
+        margin-bottom: 5px;
+        position: absolute;
+        top: 30px;
     }
 
     h6 {
@@ -54,11 +60,16 @@
         font-size: 25px;
         font-weight: bold;
         color: black;
+        margin: 0;
         margin-bottom: 20px;
+        position: absolute;
+        top: 35px;
     }
 
     .image {
-        height: 90px;
+        height: 150px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .image img {
@@ -110,7 +121,7 @@
 <div id="form-box2">
 
     <div class="image">
-        <img src="" alt="Header image">
+        <img src="https://i.pinimg.com/736x/05/76/08/0576081a31434f97ca684dce18de5b64.jpg" alt="Header image">
     </div>
 
     <div class="information">
