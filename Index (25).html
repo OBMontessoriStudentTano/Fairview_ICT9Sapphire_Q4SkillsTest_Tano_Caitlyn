@@ -86,26 +86,23 @@
 
     <div id="form-box">
 
-    <br>
-
-
-    <form>
+    <form onsubmit="authenticate(Event)">
          <h1>Login to your school account:</h1>
 
     <br>
 
-        <label for="username">Username</label>
-            <br>
-            <input type="text" id="Username" class="form-control" placeholder="Enter here" required>
+        <label>Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter here" required>
+
             <br>
 
-        <label for="password">Password</label>
-            <br>
+        <label>Password</label>
             <input type="text" id="password" class="form-control" placeholder="Enter here" required>
+
             <br> 
 
         <div class="text-center">
-        <input type="button" name="button" id="login" value="Login" class="btn btn-info rounded-5 px-5 btn-lg" onclick="authenticate()">
+        <button type="submit" id="login" class="btn btn-info rounded-5 px-5 btn-lg">Login</button>
         </div>
 
     </form>
@@ -116,21 +113,19 @@
     <script>
         let attempt_counter = 0;
 
-        function authenticate(){
-            let username = document.getElementById("Username").value;
+        function authenticate(Event){
+            Event.preventDefault();
+            let username = document.getElementById("username").value;
             let pwd = document.getElementById("password").value;
-            let granted = "Welcome Student L";
-            let denied = "Access denied";
         
         if (username === "Student L" && pwd === "6751322") {
-            alert(granted);
-            attempt_counter = 0;
-            window.locatio
-            n.href = "Notebooks.html";
+            alert("Welcome");
+            window.location.href = "Notebooks.html";
         }
 
         else {
             attempt_counter++;
+
             document.getElementById("display").innerHTML =
                 "Incorrect username and/or password. Attempt " + attempt_counter + " of 3 ";
         }
@@ -138,7 +133,7 @@
 
         if (attempt_counter >= 3) {
                 alert(denied);
-                document.getElementById("login").disabled = true; // disable button
+                document.getElementById("login").disabled = true;
            
            }
     </script>
